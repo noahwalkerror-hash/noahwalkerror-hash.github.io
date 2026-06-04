@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noah Wang | Physics</title>
+
+  <style>
+    :root {
+      --bg: #05070d;
+      --panel: rgba(13, 20, 36, 0.78);
+      --panel-border: rgba(90, 220, 255, 0.28);
+      --text: #dcecff;
+      --muted: #8fa6bf;
+      --cyan: #5ee7ff;
+      --blue: #6f9dff;
+      --violet: #b18cff;
+      --green: #8cffc1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(94, 231, 255, 0.15), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(177, 140, 255, 0.12), transparent 26%),
+        radial-gradient(circle at 50% 90%, rgba(111, 157, 255, 0.12), transparent 30%),
+        var(--bg);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(94, 231, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(94, 231, 255, 0.04) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(94, 231, 255, 0.03),
+        transparent
+      );
+      background-size: 100% 6px;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    .container {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 72px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      padding: 42px;
+      border: 1px solid var(--panel-border);
+      background: linear-gradient(145deg, rgba(13, 20, 36, 0.88), rgba(8, 12, 24, 0.74));
+      box-shadow:
+        0 0 40px rgba(94, 231, 255, 0.08),
+        inset 0 0 30px rgba(94, 231, 255, 0.03);
+      border-radius: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "PHYSICS // STOCHASTIC THERMODYNAMICS // QUANTUM THEORY";
+      position: absolute;
+      top: 18px;
+      right: -80px;
+      transform: rotate(28deg);
+      color: rgba(94, 231, 255, 0.12);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      white-space: nowrap;
+    }
+
+    .tag {
+      color: var(--green);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 5.4rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      text-shadow: 0 0 24px rgba(94, 231, 255, 0.25);
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 720px;
+    }
+
+    nav {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--cyan);
+      border: 1px solid rgba(94, 231, 255, 0.28);
+      padding: 8px 13px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      background: rgba(94, 231, 255, 0.04);
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      background: rgba(94, 231, 255, 0.12);
+      box-shadow: 0 0 18px rgba(94, 231, 255, 0.16);
+    }
+
+    main {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    section {
+      border: 1px solid var(--panel-border);
+      background: var(--panel);
+      border-radius: 18px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 28px rgba(94, 231, 255, 0.045);
+    }
+
+    section.full {
+      grid-column: 1 / -1;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .project {
+      padding: 18px;
+      border: 1px solid rgba(111, 157, 255, 0.25);
+      border-radius: 14px;
+      background: rgba(111, 157, 255, 0.055);
+      margin-top: 14px;
+    }
+
+    .project strong {
+      color: var(--text);
+    }
+
+    .equation {
+      margin-top: 16px;
+      padding: 16px;
+      border-left: 3px solid var(--violet);
+      background: rgba(177, 140, 255, 0.07);
+      color: #e7ddff;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      overflow-x: auto;
+    }
+
+    a {
+      color: var(--cyan);
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        padding: 36px 0;
+      }
+
+      header {
+        padding: 30px;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="tag">noahwalkerror-hash.github.io</div>
+
+      <h1>Noah Wang</h1>
+
+      <p class="subtitle">
+        Undergraduate student in Physics and Applied Physics at Nanyang Technological University.
+        Interested in theoretical physics, stochastic thermodynamics, quantum theory, and mathematical physics.
+      </p>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#notes">Notes</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          I am an undergraduate student working toward a stronger foundation in theoretical
+          and mathematical physics.
+        </p>
+        <p>
+          My current academic direction is shaped by analytical mechanics, quantum theory,
+          stochastic processes, and the mathematical structures underlying physical laws.
+        </p>
+      </section>
+
+      <section id="research">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Stochastic thermodynamics</li>
+          <li>Non-Markovian Langevin dynamics</li>
+          <li>Quantum mechanics</li>
+          <li>Path-integral methods</li>
+          <li>Mathematical methods in physics</li>
+        </ul>
+      </section>
+
+      <section id="projects" class="full">
+        <h2>Projects</h2>
+
+        <div class="project">
+          <strong>Non-Markovian Langevin Dynamics</strong>
+          <p>
+            Notes and calculations on Gaussian noise with memory, Markovian embeddings,
+            Fokker–Planck equations, fluctuation-dissipation relations, and path-integral
+            formulations.
+          </p>
+
+          <div class="equation">
+            mẍ = F(x,t) − γẋ + ξ(t), &nbsp;&nbsp; ⟨ξ(t)ξ(t′)⟩ = K(t,t′)
+          </div>
+        </div>
+      </section>
+
+      <section id="notes">
+        <h2>Notes</h2>
+        <ul>
+          <li>Analytical Mechanics</li>
+          <li>Quantum Mechanics</li>
+          <li>Mathematical Methods for Physicists</li>
+          <li>Stochastic Processes</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          GitHub:
+          <a href="https://github.com/noahwalkerror-hash">
+            noahwalkerror-hash
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Built with GitHub Pages · Physics / Mathematics / Computation
+    </footer>
+  </div>
+</body>
+</html>
