@@ -1,2 +1,4 @@
 # noahwalkerror-hash.github.io
-My personal website.
+Personal website. <br>
+Notes in Latex PDF will be published on the website, along with summary of recent researches.<br>
+Welcome!
