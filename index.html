@@ -152,6 +152,26 @@
       display: block;
     }
 
+    .contact-block .cv-download {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .contact-block .cv-download:hover,
+    .contact-block .cv-download:focus-visible {
+      background: var(--accent);
+      color: var(--paper);
+    }
+
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -367,6 +387,7 @@
 
       nav,
       .skip-link,
+      .cv-download,
       footer {
         display: none;
       }
@@ -412,6 +433,12 @@
         <a href="mailto:WA0030AN@e.ntu.edu.sg">WA0030AN@e.ntu.edu.sg</a>
         <a href="https://github.com/noahwalkerror-hash">GitHub</a>
         <span>Singapore</span>
+        <a
+          class="cv-download"
+          href="cv/Wang_Houtian_Academic_CV.pdf"
+          download
+          aria-label="Download curriculum vitae as a PDF"
+        >Download CV · PDF</a>
       </div>
     </header>
 
