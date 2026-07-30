@@ -1,337 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noah Walker | Physics</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Academic CV and research profile of Houtian Wang, an undergraduate in Physics and Applied Physics at Nanyang Technological University."
+  >
+  <meta name="theme-color" content="#f5f3ed">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Houtian Wang | Physics">
+  <meta
+    property="og:description"
+    content="Undergraduate research in theoretical and mathematical physics, stochastic dynamics, and nonequilibrium thermodynamics."
+  >
+  <meta property="og:url" content="https://noahwalkerror-hash.github.io/">
+  <meta
+    property="og:image"
+    content="https://noahwalkerror-hash.github.io/assets/academic-profile-og.png"
+  >
+  <meta property="og:image:alt" content="Houtian Wang — Physics, Mathematical Physics, Stochastic Dynamics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Houtian Wang | Physics">
+  <meta
+    name="twitter:description"
+    content="Undergraduate research in theoretical and mathematical physics, stochastic dynamics, and nonequilibrium thermodynamics."
+  >
+  <meta
+    name="twitter:image"
+    content="https://noahwalkerror-hash.github.io/assets/academic-profile-og.png"
+  >
+  <title>Houtian Wang | Physics</title>
 
   <style>
     :root {
-      --bg: #05070d;
-      --panel: rgba(13, 20, 36, 0.78);
-      --panel-border: rgba(90, 220, 255, 0.28);
-      --text: #dcecff;
-      --muted: #8fa6bf;
-      --cyan: #5ee7ff;
-      --blue: #6f9dff;
-      --violet: #b18cff;
-      --green: #8cffc1;
+      --paper: #f5f3ed;
+      --paper-deep: #ece8de;
+      --ink: #17202a;
+      --muted: #59636c;
+      --accent: #193f68;
+      --line: #c9c4b8;
+      --content-width: 920px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 20% 20%, rgba(94, 231, 255, 0.15), transparent 28%),
-        radial-gradient(circle at 80% 10%, rgba(177, 140, 255, 0.12), transparent 26%),
-        radial-gradient(circle at 50% 90%, rgba(111, 157, 255, 0.12), transparent 30%),
-        var(--bg);
-      line-height: 1.7;
-      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(94, 231, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(94, 231, 255, 0.04) 1px, transparent 1px);
-      background-size: 36px 36px;
-      mask-image: linear-gradient(to bottom, black, transparent 85%);
-      pointer-events: none;
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(94, 231, 255, 0.03),
-        transparent
-      );
-      background-size: 100% 6px;
-      pointer-events: none;
-      opacity: 0.35;
+    a:hover,
+    a:focus-visible {
+      color: #0d2c4d;
+      text-decoration-thickness: 2px;
     }
 
-    .container {
-      width: min(960px, calc(100% - 40px));
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -80px;
+      z-index: 10;
+      padding: 10px 14px;
+      color: #fff;
+      background: var(--accent);
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .page {
+      width: min(var(--content-width), calc(100% - 48px));
       margin: 0 auto;
-      padding: 72px 0;
-      position: relative;
-      z-index: 1;
+      padding: 62px 0 44px;
     }
 
     header {
-      padding: 42px;
-      border: 1px solid var(--panel-border);
-      background: linear-gradient(145deg, rgba(13, 20, 36, 0.88), rgba(8, 12, 24, 0.74));
-      box-shadow:
-        0 0 40px rgba(94, 231, 255, 0.08),
-        inset 0 0 30px rgba(94, 231, 255, 0.03);
-      border-radius: 22px;
-      position: relative;
-      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 48px;
+      align-items: end;
+      padding-bottom: 30px;
+      border-bottom: 2px solid var(--ink);
     }
 
-    header::before {
-      content: "PHYSICS // STOCHASTIC THERMODYNAMICS // QUANTUM THEORY";
-      position: absolute;
-      top: 18px;
-      right: -80px;
-      transform: rotate(28deg);
-      color: rgba(94, 231, 255, 0.12);
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      white-space: nowrap;
-    }
-
-    .tag {
-      color: var(--green);
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      font-size: 0.88rem;
-      letter-spacing: 0.12em;
+    .eyebrow,
+    .section-label,
+    .entry-meta,
+    .version {
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.5rem, 7vw, 5.4rem);
-      line-height: 1;
-      letter-spacing: -0.06em;
-      text-shadow: 0 0 24px rgba(94, 231, 255, 0.25);
+      font-size: clamp(2.8rem, 8vw, 5.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
     }
 
-    .subtitle {
-      margin-top: 18px;
+    .lead {
+      max-width: 690px;
+      margin: 22px 0 0;
+      color: #303943;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.04rem, 2.1vw, 1.22rem);
+      line-height: 1.65;
+    }
+
+    .contact-block {
+      min-width: 218px;
       color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 720px;
+      font-size: 0.92rem;
+      line-height: 1.8;
+      text-align: right;
+    }
+
+    .contact-block a {
+      display: block;
     }
 
     nav {
-      margin-top: 28px;
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 9px 24px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.88rem;
     }
 
     nav a {
-      color: var(--cyan);
-      border: 1px solid rgba(94, 231, 255, 0.28);
-      padding: 8px 13px;
-      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 700;
       text-decoration: none;
-      font-size: 0.92rem;
-      background: rgba(94, 231, 255, 0.04);
-      transition: 0.2s ease;
     }
 
-    nav a:hover {
-      background: rgba(94, 231, 255, 0.12);
-      box-shadow: 0 0 18px rgba(94, 231, 255, 0.16);
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
     }
 
     main {
-      margin-top: 28px;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      column-gap: 68px;
+    }
+
+    .main-column,
+    .side-column {
+      min-width: 0;
     }
 
     section {
-      border: 1px solid var(--panel-border);
-      background: var(--panel);
-      border-radius: 18px;
-      padding: 28px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 28px rgba(94, 231, 255, 0.045);
+      padding: 38px 0 34px;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 20px;
     }
 
-    section.full {
-      grid-column: 1 / -1;
+    .section-label {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
     }
 
     h2 {
-      margin: 0 0 14px;
-      font-size: 1rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      margin: 0 0 20px;
+      font-size: 1.85rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.24rem;
+      line-height: 1.35;
     }
 
     p {
       margin: 0 0 14px;
     }
 
-    ul {
-      padding-left: 20px;
-      margin: 0;
+    .entry + .entry {
+      margin-top: 28px;
+      padding-top: 27px;
+      border-top: 1px solid var(--line);
     }
 
-    li {
-      margin: 8px 0;
+    .entry-header {
+      display: flex;
+      gap: 24px;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 5px;
     }
 
-    .project {
-      padding: 18px;
-      border: 1px solid rgba(111, 157, 255, 0.25);
-      border-radius: 14px;
-      background: rgba(111, 157, 255, 0.055);
+    .entry-meta {
+      flex: none;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .entry-subtitle {
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .supervisor {
+      color: #303943;
+      font-size: 0.94rem;
+    }
+
+    .research-description {
       margin-top: 14px;
     }
 
-    .project strong {
-      color: var(--text);
+    .plain-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
-    .equation {
-      margin-top: 16px;
-      padding: 16px;
-      border-left: 3px solid var(--violet);
-      background: rgba(177, 140, 255, 0.07);
-      color: #e7ddff;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      overflow-x: auto;
+    .plain-list li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    a {
-      color: var(--cyan);
+    .plain-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .note-title {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.02rem;
+    }
+
+    .note-status {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
     footer {
-      margin-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 24px;
       color: var(--muted);
-      font-size: 0.9rem;
-      text-align: center;
+      font-size: 0.78rem;
+    }
+
+    .version {
+      font-size: 0.68rem;
+      font-weight: 800;
     }
 
     @media (max-width: 760px) {
-      .container {
-        padding: 36px 0;
+      .page {
+        width: min(100% - 32px, var(--content-width));
+        padding-top: 38px;
       }
 
       header {
-        padding: 30px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .contact-block {
+        text-align: left;
       }
 
       main {
         grid-template-columns: 1fr;
+      }
+
+      .side-column {
+        display: contents;
+      }
+
+      .entry-header {
+        display: block;
+      }
+
+      .entry-meta {
+        display: block;
+        margin-top: 6px;
+      }
+
+      footer {
+        display: block;
+      }
+
+      footer p + p {
+        margin-top: 8px;
+      }
+    }
+
+    @media print {
+      :root {
+        --paper: #fff;
+      }
+
+      body {
+        font-size: 10.5pt;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      nav,
+      .skip-link,
+      footer {
+        display: none;
+      }
+
+      header {
+        padding-bottom: 18pt;
+      }
+
+      main {
+        grid-template-columns: minmax(0, 1fr) 190px;
+        column-gap: 32pt;
+      }
+
+      section {
+        padding: 20pt 0 16pt;
+        break-inside: avoid;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="page">
     <header>
-      <div class="tag">noahwalkerror-hash.github.io</div>
+      <div>
+        <p class="eyebrow">Academic profile · Physics</p>
+        <h1>Houtian Wang</h1>
+        <p class="lead">
+          Undergraduate in Physics and Applied Physics at Nanyang Technological
+          University, with interests in theoretical and mathematical physics,
+          stochastic dynamics, nonequilibrium thermodynamics, and quantum theory.
+        </p>
+      </div>
 
-      <h1>Noah Walker</h1>
-
-      <p class="subtitle">
-        Undergraduate student in Physics and Applied Physics at Nanyang Technological University.
-        Interested in theoretical physics,  quantum theory, stochastic thermodynamics, and mathematical physics.
-      </p>
-
-      <nav>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#notes">Notes</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="contact-block" aria-label="Contact information">
+        <a href="mailto:WA0030AN@e.ntu.edu.sg">WA0030AN@e.ntu.edu.sg</a>
+        <a href="https://github.com/noahwalkerror-hash">GitHub</a>
+        <span>Singapore</span>
+      </div>
     </header>
 
-    <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>
-          I am an undergraduate student working toward a stronger foundation in theoretical
-          and mathematical physics.
-        </p>
-        <p>
-          My current academic direction is shaped by analytical mechanics, quantum theory,
-          stochastic processes, and the mathematical structures underlying physical laws.
-        </p>
-      </section>
+    <nav aria-label="Page sections">
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#interests">Interests</a>
+      <a href="#notes">Academic notes</a>
+    </nav>
 
-      <section id="research">
-        <h2>Current Research Interests</h2>
-        <ul>
-          <li>Stochastic thermodynamics</li>
-          <li>Non-Markovian Langevin dynamics</li>
-          <li>Quantum mechanics</li>
-          <li>Path-integral methods</li>
-          <li>Mathematical methods in physics</li>
-        </ul>
-      </section>
+    <main id="main-content">
+      <div class="main-column">
+        <section id="research" aria-labelledby="research-heading">
+          <p class="section-label">Research experience</p>
+          <h2 id="research-heading">Current work</h2>
 
-      <section id="projects" class="full">
-        <h2>Ongoing Projects</h2>
+          <article class="entry">
+            <div class="entry-header">
+              <h3>Non-Markovian Stochastic Dynamics</h3>
+              <span class="entry-meta">2026–present</span>
+            </div>
+            <p class="entry-subtitle">
+              Undergraduate Research Project · Nanyang Technological University
+            </p>
+            <p class="supervisor">
+              Supervisor:
+              <a href="https://francoisgaybalmaz.github.io">
+                Prof. François Gay-Balmaz
+              </a>
+            </p>
+            <p class="research-description">
+              Studying memory effects in stochastic thermodynamics, with emphasis
+              on generalized Langevin formulations, fluctuation–dissipation
+              consistency, stationary behavior, and entropy production. Current
+              work focuses on organizing and validating derivations against
+              reduced-system benchmarks and the relevant literature.
+            </p>
+          </article>
+        </section>
 
-        <div class="project">
-          <strong>Non-Markovian Langevin Dynamics</strong>
-          <p>
-            Notes and calculations on Gaussian noise with memory, Markovian embeddings,
-            Fokker–Planck equations, fluctuation-dissipation relations, and path-integral
-            formulations.
-          </p>
-        </div>
-      </section>
+        <section id="education" aria-labelledby="education-heading">
+          <p class="section-label">Education</p>
+          <h2 id="education-heading">Academic background</h2>
 
-          <section id="notes">
-        <h2>Notes</h2>
-        <ul>
-          <li>
-            <p>
-            <a href="notes/Analytical_Mechanics_Notes.pdf" target="_blank">
-              Analytical Mechanics
-            </a>
-              </p>
-            <p>
-              Quantum Mechanics
+          <article class="entry">
+            <div class="entry-header">
+              <h3>Nanyang Technological University</h3>
+              <span class="entry-meta">Singapore</span>
+            </div>
+            <p class="entry-subtitle">
+              Undergraduate · Physics and Applied Physics
             </p>
             <p>
-              Mathematical Method for Physics
+              Building a foundation in analytical mechanics, quantum mechanics,
+              thermal and statistical physics, and the mathematical methods used
+              in theoretical physics.
             </p>
-          </li>
-        </ul>
-      </section>
+          </article>
+        </section>
+      </div>
 
-      <section id="contact">
-          <h2>Contact</h2>
-          <ul>
-            <li>
-              GitHub:
-              <a href="https://github.com/noahwalkerror-hash" target="_blank">
-                noahwalkerror-hash
-              </a>
-            </li>
-            <li>
-              School Email:
-              <a href="mailto:WA0030AN@e.ntu.edu.sg">
-                WA0030AN@e.ntu.edu.sg
-              </a>
-            </li>
+      <aside class="side-column" aria-label="Additional academic information">
+        <section id="interests" aria-labelledby="interests-heading">
+          <p class="section-label">Research interests</p>
+          <h2 id="interests-heading">Areas of focus</h2>
+          <ul class="plain-list">
+            <li>Mathematical physics</li>
+            <li>Stochastic dynamics</li>
+            <li>Nonequilibrium statistical mechanics</li>
+            <li>Quantum theory and field theory</li>
           </ul>
         </section>
 
+        <section id="notes" aria-labelledby="notes-heading">
+          <p class="section-label">Academic notes</p>
+          <h2 id="notes-heading">Selected writing</h2>
+          <ul class="plain-list">
+            <li>
+              <a
+                class="note-title"
+                href="notes/Analytical_Mechanics_Notes.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Analytical Mechanics
+              </a>
+              <span class="note-status">Working notes · PDF</span>
+            </li>
+            <li>
+              <span class="note-title">Quantum Mechanics</span>
+              <span class="note-status">Notes in preparation</span>
+            </li>
+            <li>
+              <span class="note-title">Mathematical Methods for Physics</span>
+              <span class="note-status">Notes in preparation</span>
+            </li>
+          </ul>
+        </section>
+      </aside>
     </main>
 
     <footer>
-      Built with GitHub Pages · Physics / Mathematics / Computation
+      <p>Academic profile of Houtian Wang</p>
+      <p class="version">Version 0.2 · July 2026</p>
     </footer>
   </div>
 </body>
