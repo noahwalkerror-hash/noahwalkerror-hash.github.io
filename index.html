@@ -96,7 +96,7 @@
     header {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 48px;
+      gap: 40px;
       align-items: end;
       padding-bottom: 30px;
       border-bottom: 2px solid var(--ink);
@@ -126,7 +126,7 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.8rem, 8vw, 5.25rem);
+      font-size: clamp(2.5rem, 6vw, 4.35rem);
       line-height: 0.98;
       letter-spacing: -0.045em;
     }
@@ -140,12 +140,37 @@
       line-height: 1.65;
     }
 
+    .header-aside {
+      display: grid;
+      grid-template-columns: auto 112px;
+      gap: 20px;
+      align-items: end;
+    }
+
     .contact-block {
-      min-width: 218px;
+      min-width: 190px;
       color: var(--muted);
       font-size: 0.92rem;
       line-height: 1.8;
       text-align: right;
+    }
+
+    .portrait-slot {
+      display: grid;
+      width: 112px;
+      aspect-ratio: 4 / 5;
+      margin: 0;
+      place-items: center;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--paper-deep);
+    }
+
+    .portrait-slot span {
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .contact-block a {
@@ -341,7 +366,22 @@
         gap: 24px;
       }
 
+      .header-aside {
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 18px;
+        justify-content: start;
+      }
+
+      .portrait-slot {
+        grid-column: 1;
+        grid-row: 1;
+        width: 96px;
+      }
+
       .contact-block {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
         text-align: left;
       }
 
@@ -388,8 +428,13 @@
       nav,
       .skip-link,
       .cv-download,
+      .portrait-slot,
       footer {
         display: none;
+      }
+
+      .header-aside {
+        display: block;
       }
 
       header {
@@ -429,16 +474,26 @@
         </p>
       </div>
 
-      <div class="contact-block" aria-label="Contact information">
-        <a href="mailto:WA0030AN@e.ntu.edu.sg">WA0030AN@e.ntu.edu.sg</a>
-        <a href="https://github.com/noahwalkerror-hash">GitHub</a>
-        <span>Singapore</span>
-        <a
-          class="cv-download"
-          href="cv/Wang_Houtian_Academic_CV.pdf"
-          download
-          aria-label="Download curriculum vitae as a PDF"
-        >Download CV · PDF</a>
+      <div class="header-aside">
+        <div class="contact-block" aria-label="Contact information">
+          <a href="mailto:WA0030AN@e.ntu.edu.sg">WA0030AN@e.ntu.edu.sg</a>
+          <a href="https://github.com/noahwalkerror-hash">GitHub</a>
+          <span>Singapore</span>
+          <a
+            class="cv-download"
+            href="cv/Wang_Houtian_Academic_CV.pdf"
+            download
+            aria-label="Download curriculum vitae as a PDF"
+          >Download CV · PDF</a>
+        </div>
+
+        <figure
+          class="portrait-slot"
+          role="img"
+          aria-label="Portrait space reserved"
+        >
+          <span>Portrait</span>
+        </figure>
       </div>
     </header>
 
@@ -457,8 +512,35 @@
 
           <article class="entry">
             <div class="entry-header">
+              <h3>
+                From the Quantum Particle to Nonrelativistic Quantum Fields: A
+                Mathematical Tour
+              </h3>
+              <span class="entry-meta">August 2026–present</span>
+            </div>
+            <p class="entry-subtitle">
+              URECA Project · Nanyang Technological University
+            </p>
+            <p class="supervisor">
+              Supervisor:
+              <a href="https://francoisgaybalmaz.github.io">
+                Prof. François Gay-Balmaz
+              </a>
+            </p>
+            <p class="research-description">
+              Developing a mathematically structured route from single-particle
+              quantum mechanics to nonrelativistic quantum field theory. The
+              project constructs an explicit dictionary between one-particle and
+              second-quantized formulations, including bosonic and fermionic
+              Fock spaces, creation and annihilation operators, quantum fields
+              as operators on Fock space, with optional extensions to symmetry.
+            </p>
+          </article>
+
+          <article class="entry">
+            <div class="entry-header">
               <h3>Memory Effects in Stochastic Thermodynamics</h3>
-              <span class="entry-meta">2026–present</span>
+              <span class="entry-meta">May 2026–present</span>
             </div>
             <p class="entry-subtitle">
               Undergraduate Research Project · Nanyang Technological University
@@ -475,33 +557,6 @@
               Current work applies this framework to the full non-Markovian
               system, examining fluctuation–dissipation consistency, stationary
               behavior, and entropy production.
-            </p>
-          </article>
-
-          <article class="entry">
-            <div class="entry-header">
-              <h3>
-                From the Quantum Particle to Nonrelativistic Quantum Fields: A
-                Mathematical Tour
-              </h3>
-              <span class="entry-meta">2026–present</span>
-            </div>
-            <p class="entry-subtitle">
-              Undergraduate Research Project · Nanyang Technological University
-            </p>
-            <p class="supervisor">
-              Supervisor:
-              <a href="https://francoisgaybalmaz.github.io">
-                Prof. François Gay-Balmaz
-              </a>
-            </p>
-            <p class="research-description">
-              Developing a mathematically structured route from single-particle
-              quantum mechanics to nonrelativistic quantum field theory. The
-              project constructs an explicit dictionary between one-particle and
-              second-quantized formulations, including bosonic and fermionic
-              Fock spaces, creation and annihilation operators, quantum fields
-              as operators on Fock space, with optional extensions to symmetry.
             </p>
           </article>
         </section>
