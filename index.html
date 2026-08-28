@@ -156,21 +156,21 @@
     }
 
     .portrait-slot {
-      display: grid;
+      display: block;
       width: 112px;
       aspect-ratio: 4 / 5;
       margin: 0;
-      place-items: center;
+      overflow: hidden;
       border: 1px solid var(--line);
-      color: var(--muted);
       background: var(--paper-deep);
     }
 
-    .portrait-slot span {
-      font-size: 0.64rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+    .portrait-slot img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
     }
 
     .contact-block a {
@@ -487,12 +487,15 @@
           >Download CV · PDF</a>
         </div>
 
-        <figure
-          class="portrait-slot"
-          role="img"
-          aria-label="Portrait space reserved"
-        >
-          <span>Portrait</span>
+        <figure class="portrait-slot">
+          <img
+            src="assets/wang-houtian-portrait.jpg"
+            alt="Portrait of Wang Houtian"
+            width="743"
+            height="1058"
+            decoding="async"
+            fetchpriority="high"
+          >
         </figure>
       </div>
     </header>
