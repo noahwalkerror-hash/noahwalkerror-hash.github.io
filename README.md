@@ -1,6 +1,6 @@
 # Wang Houtian — Academic CV site
 
-A restrained academic profile for physics research, education, selected notes,
+A restrained academic profile for physics research, education, technical work,
 and contact information.
 
 ## Versions
